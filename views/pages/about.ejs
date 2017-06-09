@@ -1,0 +1,42 @@
+<% include ../partials/head %>
+<% include ../partials/header %>
+
+<style>
+	
+	#content {
+		border: 1px solid black;
+		padding: 4px;
+	}
+
+	#authorize-button{
+		display:none;
+	}
+
+	#signout-button{
+		display:none;
+	}
+
+	.responsiveCal {
+		position: relative; padding-bottom: 75%; height: 0; overflow: hidden;
+	}
+ 
+	.responsiveCal iframe {
+		position: absolute; top:0; left: 0; width: 100%; height: 100%;
+		font-size: 14px;
+	 }
+
+	 div.container {
+	 	margin: 0px;
+	 }
+
+</style>
+
+	<h3><a href="https://groups.google.com/d/forum/smith-descendents"> Smith Family Google Group</a></h3>
+    <!--Add buttons to initiate auth sequence and sign out-->
+	<h3>Holden Calendar</h3>
+	<div class="responsiveCal">
+		<iframe src="https://calendar.google.com/calendar/embed?showTitle=0&amp;showNav=0&amp;showPrint=0&amp;showTabs=0&amp;mode=WEEK&amp;height=600&amp;wkst=1&amp;bgcolor=%23FFFFFF&amp;src=v1mk1sprujnrd2jotaj8nr1dnk%40group.calendar.google.com&amp;color=%236B3304&amp;ctz=America%2FNew_York" style="border-width:0" width="100%" height="800" frameborder="0" scrolling="no"></iframe>
+
+  </body>
+</html>
+<% include ../partials/footer %>

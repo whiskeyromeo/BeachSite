@@ -1,0 +1,84 @@
+<% include ../partials/head %>
+<% include ../partials/header %>
+<script src="data.js"></script>
+<style>
+  #map {
+    height: 90%;
+  }
+  /* Optional: Makes the sample page fill the window. */
+  html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+  }
+  nav.navbar.navbar-default{
+    margin-bottom: 0px;
+  }
+
+  .infowindow {
+  	height: 200px;
+  	width: 300px;
+  	font-size: 22px;
+  }
+</style>
+<script>
+  var icons = ['http://maps.google.com/mapfiles/ms/icons/green-dot.png', 'http://maps.google.com/mapfiles/ms/icons/red-dot.png', 'http://maps.google.com/mapfiles/ms/icons/purple-dot.png','http://maps.google.com/mapfiles/ms/icons/yellow-dot.png','http://maps.google.com/mapfiles/ms/icons/blue-dot.png','https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png']
+
+  
+
+  function initMap() {
+    var myData = data.people;
+    var map = new google.maps.Map(document.getElementById('map'), {
+      zoom: 16,
+      center: {lat: 33.909, lng: -78.336}
+    });
+
+    var infowindow = new google.maps.InfoWindow();
+
+    function addGeoMarker(myObject) {
+      var geocoder = new google.maps.Geocoder();
+      geocoder.geocode({ address: myObject.address}, function(res, status ) {
+        if(res.length > 0){
+          
+          var marker = new google.maps.Marker({
+            position: res[0].geometry.location,
+            map: map,
+            title: myObject.name,
+            animation: google.maps.Animation.DROP,
+            icon: icons[Math.floor(Math.random() * icons.length)]
+          });
+
+          google.maps.event.addListener(marker, 'click', (function(marker) {
+            return function() {
+              infowindow.setContent(
+                `<div class="infowindow"><b>${myObject.name}</b><hr/>
+                <p>${myObject.address}</p></br></div>`);
+              infowindow.open(map, marker)
+            }
+          })(marker));
+
+          return marker;
+       }
+
+      })
+    }
+
+    var markers = [];
+    for (var i=0; i<myData.length; i++) {
+      var thisMarker = addGeoMarker(myData[i]);
+      
+      markers.push(thisMarker);
+    }
+
+    google.maps.event.addListener(map, 'click', function() {
+      if(infowindow) infowindow.close();
+    })
+
+  }
+</script>
+<script async defer
+src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCMqz34QK2DGgoh1ap3H85T58LpV2lX5RE&callback=initMap">
+</script>
+
+<div id="map"></div>
+<% include ../partials/footer %>
