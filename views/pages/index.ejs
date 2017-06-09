@@ -44,6 +44,7 @@
             position: res[0].geometry.location,
             map: map,
             title: myObject.name,
+            size: new google.maps.Size(50,50),
             animation: google.maps.Animation.DROP,
             icon: icons[Math.floor(Math.random() * icons.length)]
           });
