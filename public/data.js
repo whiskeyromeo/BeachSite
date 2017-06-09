@@ -43,6 +43,11 @@
       "contact": []
     },
     {
+      "name": "Maddox",
+      "address": "953 Ocean Blvd. W, Holden Beach, NC",
+      "contact": []
+    },
+    {
       "name": "Jamieson/Metcalfs",
       "address": "921 Ocean Blvd. W, Holden Beach, NC",
       "contact": []
