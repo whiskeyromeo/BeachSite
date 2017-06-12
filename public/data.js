@@ -9,7 +9,7 @@
     },
     {
       "name": "Evans/Tisdale/Griffith",
-      "address": "893 Ocean Blvd. W, Holden Beach, NC",
+      "address": "105 Swordfish Dr, Holden Beach, NC",
       "contact": []
     },
     {
@@ -30,11 +30,6 @@
     {
       "name": "Felders",
       "address": "969 Ocean Blvd. W, Holden Beach, NC",
-      "contact": []
-    },
-    {
-      "name": "Eiler/Evans/Goodwin",
-      "address": "973 Ocean Blvd. W, Holden Beach, NC",
       "contact": []
     },
     {
