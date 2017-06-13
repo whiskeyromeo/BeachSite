@@ -38,6 +38,11 @@
       "contact": []
     },
     {
+      "name": "Evans, Tisdale, Joseph",
+      "address": "893 Ocean Blvd. W, Holden Beach, NC",
+      "contact": []
+    },
+    {
       "name": "Maddox",
       "address": "953 Ocean Blvd. W, Holden Beach, NC",
       "contact": []
